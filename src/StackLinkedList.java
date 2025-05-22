@@ -1,3 +1,4 @@
+
 public class StackLinkedList implements Stack{
 
     StackItem top;
@@ -10,6 +11,9 @@ public class StackLinkedList implements Stack{
     }
     @Override
     public Object pop() {
+        if(this.pop == null){
+            throw new MyEmptyStackException("stack is empty,you can't pop anything");
+        }
         Object tempData = top.getData();
         top = top.getNext();
         return tempData;
